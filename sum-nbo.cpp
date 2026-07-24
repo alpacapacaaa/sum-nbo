@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
         }
  
         uint32_t net_value;
-        if (fread(&net_value, sizeof(net_value), 1, fp) != 1) {
+        if (fread(&net_value, 1, sizeof(net_value), fp) != 4) { // parameter change
             fprintf(stderr, "Error: file too small: %s\n", argv[i]);
             fclose(fp);
             return 1;
